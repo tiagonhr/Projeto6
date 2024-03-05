@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Person Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">    
+    </head>
+    <body>
+        <div>
+            <img src="{{ url_for('static', filename='images/person.jpg')}}" alt="persons" width="200" height="200">
+        </div>
+        <button id="edit" type="button" {{butshow}} onclick="window.location.href = '/?option=edit'" class="button">Edit</button>
+        <button id="delete" type="button" {{butshow}} onclick="window.location.href = '/?option=delete'" class="button">Delete</button>
+        <button id="insert" type="button" {{butshow}} onclick="window.location.href = '/?option=insert'" class="button">Insert</button>
+        <button id="save" type="submit" form="form" {{butedit}}>Save</button>
+        <button id="cancel" type="button" {{butedit}} onclick="window.location.href = '/?option=cancel'" class="button">Cancel</button>
+        <button id="exit" type="button" {{butshow}} onclick="window.location.href = '/?option=exit'" class="button">Exit</button>
+
+        <div id="teste">
+            <h1>Person</h1>
+            <form id="form" action="/?option=save" method="post">
+              <label for="code">Code:</label>
+              <input type="text" {{butedit}} id="code" name="code" value="{{code}}"/>
+              <br>
+              <label for="name">Name:</label>
+              <input type="text" {{butedit}} id="name" name="name" value="{{name}}"/>
+              <br>
+              <label for="dob">DoB:</label>
+              <input type="text" {{butedit}} id="dob" name="dob" value="{{dob}}"/>
+              <br>
+              <label for="salary">Salary:</label>
+              <input type="text" {{butedit}} id="salary" name="salary" value="{{salary}}"/>
+            </form>
+        </div>
+        <br>
+        <button id="first" type="button" {{butshow}} onclick="window.location.href = '/?option=first'" class="button">First</button>
+        <button id="previous" type="button" {{butshow}} onclick="window.location.href = '/?option=previous'" class="button">Previous</button>
+        <button id="next" type="button" {{butshow}} onclick="window.location.href = '/?option=next'" class="button">Next</button>
+        <button id="last" type="button" {{butshow}} onclick="window.location.href = '/?option=last'" class="button">Last</button>
+
+    </body>
+</html>
