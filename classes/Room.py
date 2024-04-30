@@ -41,7 +41,7 @@ class Room(Gclass):
         self._floor = floor
         self._tipology = tipology
         self._room = room
-        code = self._section + self._floor + self._tipology[0] + self._room
+        code = self._section + self._floor + self._room
 
         Room.obj[code] = self
 
